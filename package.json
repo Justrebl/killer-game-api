@@ -1,0 +1,19 @@
+{
+  "name": "killer-game-api",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "check": "node --check docs/app.js && node --check docs/crypto.js && node --check worker/src/index.js",
+    "test": "node --test test/*.test.mjs",
+    "test:browser": "playwright test",
+    "smoke:prepare": "node test/prepare-smoke.mjs",
+    "smoke:client": "node test/smoke-client.mjs",
+    "seed": "node worker/scripts/seed.mjs",
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.56.1",
+    "wrangler": "^4.0.0"
+  }
+}

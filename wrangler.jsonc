@@ -1,0 +1,22 @@
+{
+  "name": "killer-game-api",
+  "main": "worker/src/index.js",
+  "compatibility_date": "2026-11-17",
+  "vars": {
+    "ALLOWED_ORIGIN": "https://justrebl.github.io"
+  },
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "killer-game",
+      "database_id": "388b425b-9840-4e8d-901a-3707b810f49b",
+      "migrations_dir": "worker/migrations"
+    }
+  ],
+  "r2_buckets": [
+    {
+      "binding": "PHOTOS",
+      "bucket_name": "killer-game-photos","preview_bucket_name": "killer-game-photos"
+    }
+  ]
+}

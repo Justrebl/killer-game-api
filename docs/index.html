@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mission Pierrot</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="shell">
+    <section id="login" class="card">
+      <p class="eyebrow">Dossier confidentiel</p>
+      <h1>Mission Pierrot</h1>
+      <p>Un seul mot de passe donne accès à toutes les cibles.</p>
+      <form id="login-form">
+        <label for="password">Mot de passe</label>
+        <input id="password" name="password" type="password" autocomplete="current-password" required>
+        <button type="submit">Ouvrir les dossiers</button>
+      </form>
+      <p id="login-error" class="error" role="alert"></p>
+    </section>
+
+    <section id="game" hidden>
+      <header class="game-header">
+        <div>
+          <p class="eyebrow">Dossier confidentiel</p>
+          <h1>Les 8 cibles</h1>
+        </div>
+        <p id="progress" class="progress"></p>
+      </header>
+      <div id="target-list" class="target-list"></div>
+      <p id="global-error" class="error" role="alert"></p>
+      <dialog id="photo-dialog" class="photo-dialog" aria-labelledby="photo-title">
+        <div class="photo-dialog__header">
+          <h2 id="photo-title">Photo de la cible</h2>
+          <form method="dialog">
+            <button class="secondary" type="submit" aria-label="Fermer la photo">Fermer</button>
+          </form>
+        </div>
+        <img id="photo-image" class="photo-dialog__image" alt="" hidden>
+        <p id="photo-status" role="status"></p>
+      </dialog>
+    </section>
+  </main>
+
+  <template id="target-template">
+    <article class="target-card">
+      <div class="target-card__header">
+        <div>
+          <p class="target-position"></p>
+          <h2 class="target-name" tabindex="-1"></h2>
+        </div>
+        <span class="target-status"></span>
+      </div>
+      <p class="target-condition"></p>
+      <button class="victory-button" type="button">Condition respectée</button>
+      <p class="victory-state" role="status"></p>
+      <button class="photo-view-button secondary" type="button" hidden>Voir la photo</button>
+      <form class="photo-form" hidden>
+        <label>
+          Preuve photo
+          <input class="photo-input" type="file" accept="image/jpeg,image/png,image/webp">
+        </label>
+        <button type="submit">Chiffrer et envoyer</button>
+      </form>
+    </article>
+  </template>
+
+  <script src="config.js"></script>
+  <script src="app.js" type="module"></script>
+</body>
+</html>
